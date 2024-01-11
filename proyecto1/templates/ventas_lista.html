@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+  <h1>Lista Ventas</h1>
+
+  <a href="{% url 'ventas_lista' %}">Ventas</a>
+
+  <ul>
+    {% for venta in ventas %}
+      <li>Usuario: {{ venta.usuario }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

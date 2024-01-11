@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+<br>
+
+{% for usuario in usuarios %}
+    <li>Nombre de usuario: {{usuario.nombre}}, Email: {{usuario.email}}</li>
+    <button>
+        <a href="{% url 'eliminar usuario' usuario.nombre %}"> Eliminar<a/>
+        </button>
+        <button>
+            <a href="{% url 'editar usuario' usuario.nombre %}"> Editar</a>
+        </button>
+
+{% endfor %}
+{% endblock %}
